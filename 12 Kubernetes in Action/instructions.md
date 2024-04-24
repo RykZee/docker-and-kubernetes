@@ -31,10 +31,21 @@ To see the revision history and to see more details run
 In order to rollback to a specific revision run
 `kubectl rollout undo deployment/first-app --to-revision=<REVISION_NUMBER>`
 
+## Declarative commands
+After defining yaml files with specification, the file can be applied using
+`kubectl apply -f <NAME_OF_FILE.yaml>`
+
+and thereafter deleted using
+`kubectl delete -f <NAME_OF_FILE.yaml>`
+
 ## minikube
 To service the app, meaning making it available in a browser tab.
 `minikube service first-app`
 
 To run dashboard:
 `minikube dashboard`
+
+## Tips
+If you know a command which is long which you want to convert to a yaml file, you can use a shortcut using:
+`kubectl create deployment some-app --image=nginx:1.22.1 --port=80 -o yaml > deployment.yaml`
 
