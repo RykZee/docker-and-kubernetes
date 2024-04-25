@@ -20,6 +20,9 @@ spec:
               name: story-volume
       volumes:
         - name: story-volume
-          emptyDir: {}
+          # emptyDir: {}
+          hostPath:
+            path: /data # On the host machine (the node)
+            type: DirectoryOrCreate
 
 
