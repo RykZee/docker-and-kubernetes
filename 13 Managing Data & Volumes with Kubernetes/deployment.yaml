@@ -21,8 +21,8 @@ spec:
       volumes:
         - name: story-volume
           # emptyDir: {}
-          hostPath:
-            path: /data # On the host machine (the node)
-            type: DirectoryOrCreate
-
-
+          # hostPath:
+          #   path: /data # On the host machine (the node)
+          #   type: DirectoryOrCreate
+          persistentVolumeClaim:
+            claimName: host-pvc
